@@ -33,13 +33,13 @@
             <form>
               <h1 style="font-size: 24px"> NAF Login </h1>
               <div>
-                <input type="text" class="form-control" placeholder="Digite seu email" required="" />
+                <input type="text" id="email" value="atendente@atendente" class="form-control" placeholder="Digite seu email" required="" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Digite sua senha" required="" />
+                <input type="password" id="pswd" value="atendente" class="form-control" placeholder="Digite sua senha" required="" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="{{ route('visitante') }}"> Entrar </a>
+                <a class="btn btn-default submit" id="login" href="{{ route('visitante') }}" href2="{{ route('atendente') }}"> Entrar </a>
                 <a class="reset_pass" href="#">Esqueceu sua senha ?</a>
               </div>
 
@@ -67,19 +67,19 @@
             <form>
               <h1>Criar conta</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Digite o seu nome" required="" />
+                <input type="text" class="form-control"  placeholder="Digite o seu nome" required="" />
               </div>
               <div>
-                <input type="email" class="form-control" placeholder="Digite o seu email" required="" />
+                <input type="email" class="form-control" value="atendente@atendente" id="email_register" placeholder="Digite o seu email" required="" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Digite sua senha" required="" />
+                <input type="password" class="form-control"  value="atendente"  id="pswd_register" placeholder="Digite sua senha" required="" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Digite sua senha novamente" required="" />
+                <input type="password" class="form-control" value="atendente"  id="pswd_register_repeat" placeholder="Digite sua senha novamente" required="" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="{{ route('visitante') }}">Criar conta</a>
+                <a class="btn btn-default submit" id="registerBtn" href="{{ route('visitante') }}" href2="{{ route('atendente') }}" >Criar conta</a>
               </div>
 
               <div class="clearfix"></div>
@@ -102,4 +102,36 @@
       </div>
     </div>
   </body>
+  <script src="{{ asset('node_modules/gentelella/vendors/jquery/dist/jquery.min.js') }}"></script>
+  <script>
+    $(document).ready(function() {
+      var loginBtn = $('#login')
+      var email = $('#email')
+      var pswd = $('#pswd')
+
+      loginBtn.click(function (e) {
+        e.preventDefault()
+        if ((email.val() == 'atendente@atendente') && (pswd.val() == 'atendente')) {
+          window.location = loginBtn.attr("href2")
+        } else {
+          window.location = loginBtn.attr("href")
+        }
+      })
+
+      var registerBtn = $('#registerBtn')
+      var emailRegister = $('#email_register')
+      var pswdRegister = $('#pswd_register')
+      var pswdRepeatRegister = $('#pswd_register_repeat')
+
+      registerBtn.click(function (e) {
+        e.preventDefault()
+        if ((emailRegister.val() == 'atendente@atendente') && (pswdRegister.val() == 'atendente' && pswdRepeatRegister.val() == 'atendente')) {
+          window.location = registerBtn.attr("href2")
+        } else {
+          window.location = registerBtn.attr("href")
+        }
+      })
+    
+    })
+  </script>
 </html>

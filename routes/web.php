@@ -23,6 +23,30 @@ Route::get('/visitante', function () {
     return view('visitante');
 })->name('visitante');
 
+Route::get('/atendente', function () {
+    return view('atendente');
+})->name('atendente');
+
+Route::get('/agendamento-atendente', function () {
+    return view('agendamento_atendente');
+})->name('agendamentos-atendente');
+
+Route::get('/servicos-atendente', function () {
+    return view('servicos_atendente');
+})->name('servicos-atendente');
+
+Route::get('/calendario-atendente', function () {
+    return view('calendario_atendente');
+})->name('calendario-atendente');
+
+Route::get('/mesa-atendente', function () {
+    return view('mesa_atendente');
+})->name('mesa-atendente');
+
+Route::get('/situacao-atendente', function () {
+    return view('situacao_atendente');
+})->name('situacao-atendente');
+
 Route::get('/meusagendamentos', function () {
     return view('agendamento');
 })->name('agendamentos');
