@@ -1,3 +1,3 @@
 ## Projeto NAF
-<p align="center"> projeto naf basico, apenas rotas e algumas views implementadas </p>
+<p align="left">Projeto <b>NAF</b> básico, apenas rotas e algumas views implementadas</p>
 
